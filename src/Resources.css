@@ -1,0 +1,73 @@
+/* Pathways grid: keep 5-across sizing, don't stretch when fewer items exist */
+.pathways-grid {
+    display: grid;
+    gap: var(--gap);
+    justify-content: start;
+
+    /* 5 columns max, cards maintain dimension, leftover space stays empty */
+    grid-template-columns: repeat(auto-fill,
+            minmax(min(100%, calc((100% - (4 * var(--gap))) / 5)), 1fr));
+}
+
+/* On smaller screens, prioritize readability */
+@media (max-width: 900px) {
+    .pathways-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .pathways-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Pathway cards hover effect */
+.pathway-card {
+    position: relative;
+    transition: box-shadow 180ms ease, transform 180ms ease, border-color 180ms ease;
+}
+
+/* Pink glow on hover */
+.pathway-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255, 0, 122, 0.25), 0 10px 25px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+}
+
+/* Icon wiggle */
+.pathway-icon {
+    transition: transform 180ms ease;
+}
+
+/* Wiggle animation on hover */
+.pathway-card:hover .pathway-icon {
+    animation: iconWiggle 450ms ease-in-out;
+}
+
+@keyframes iconWiggle {
+    0% { transform: rotate(0deg) scale(1); }
+
+    20% { transform: rotate(-6deg) scale(1.03); }
+
+    40% { transform: rotate(6deg) scale(1.03); }
+
+    60% { transform: rotate(-4deg) scale(1.02); }
+
+    80% { transform: rotate(4deg) scale(1.01); }
+
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .pathway-card,
+    .pathway-icon {
+        transition: none;
+    }
+
+    .pathway-card:hover .pathway-icon {
+        animation: none;
+    }
+}

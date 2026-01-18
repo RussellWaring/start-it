@@ -1,0 +1,78 @@
+.job-item {
+    text-align: left;
+    width: 100%;
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.job-item--selected {
+    border: 2px solid var(--primary);
+}
+
+.job-title {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.job-item:hover .job-title {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    /* text-underline-offset: 3px; */
+}
+
+.sort-pill {
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--muted);
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.sort-pill--active {
+    border-color: var(--primary);
+    color: var(--text);
+}
+
+.filter-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-left: 6px;
+    /* matches your Sort by row alignment */
+}
+
+.filter-select {
+    appearance: none;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 8px 34px 8px 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text);
+    cursor: pointer;
+    position: relative;
+}
+
+/* Simple down-arrow */
+.filter-select {
+    background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+        linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+    background-position: calc(100% - 16px) 55%, calc(100% - 11px) 55%;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+}
+
+.job-details-sticky {
+    position: sticky;
+    top: 16px;
+    /* space from top of viewport */
+    align-self: start;
+}

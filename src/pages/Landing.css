@@ -1,0 +1,117 @@
+/* src/Landing.css */
+
+.landing {
+    min-height: 100svh;
+    background: var(--bg);
+    color: var(--text);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Center the whole stack as ONE unit */
+.landing-shell {
+    min-height: 100svh;
+    width: min(980px, 100%);
+    margin: 0 auto;
+    padding: 0 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* ✅ tight + responsive spacing between quotes and CTA */
+    gap: clamp(18px, 3vh, 34px);
+}
+
+/* Quotes block should NOT take unlimited height */
+.landing-quotes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    /* ✅ this is the key: reserve a sane height for the carousel */
+    height: clamp(190px, 32vh, 260px);
+    position: relative;
+    z-index: 1;
+    /* Ensure quotes stay on top of any background */
+}
+
+/* CTA block */
+.landing-cta {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    gap: 10px;
+
+    /* breathing room from bottom without pushing everything apart */
+    padding-bottom: clamp(24px, 4vh, 48px);
+    position: relative;
+    z-index: 2;
+    /* Make sure it's above the carousel */
+}
+
+.landing-btn {
+    background: var(--bg);
+    border: 1px solid var(--primary);
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    /* remove underline */
+    transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+}
+
+.landing-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(255, 0, 122, 0.18);
+    /* subtle pink glow */
+    border-color: var(--accent);
+}
+
+.landing-signin {
+    display: grid;
+    gap: 4px;
+    color: var(--muted);
+}
+
+.landing-signin a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.landing-statement {
+    margin-top: 10px;
+    font-weight: 800;
+    width: min(960px, 100%);
+}
+
+/* Corner elements */
+.landing-logo {
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+    width: 70px;
+}
+
+.landing-partner {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    text-align: right;
+}
+
+/* Short screens: reduce reserved height + gap */
+@media (max-height: 720px) {
+    .landing-shell {
+        gap: 16px;
+    }
+
+    .landing-quotes {
+        height: 180px;
+    }
+}

@@ -1,0 +1,41 @@
+Page (layout .jsx component): Whole site wrapper; global background and base styles.
+Header (regular component .jsx): Top navigation area; logo, links, call-to-actions.
+Main (NOT a .jsx file — just <main> HTML tag): Primary page content area (between header and footer).
+Section (layout .jsx component): Vertical content block with consistent top/bottom spacing.
+Container (layout .jsx component): Centers content; controls max-width and side padding.
+Stack (layout .jsx component): Vertical layout; evenly spaces children using gap.
+Grid (layout .jsx component): Responsive columns/rows layout for arranging blocks.
+Card (regular component .jsx): Boxed content unit with padding, border, and radius.
+Footer (regular component .jsx): Bottom site area; links, contact, copyright.
+
+
+<Page>                      // whole site wrapper (background, base styles)
+  <Header />                // nav, logo, global top bar
+
+  <Main>                    // the content area of the page (semantic wrapper)
+
+    <Section>               // a vertical slice of the page (padding top/bottom)
+      <Container>           // sets max-width + left/right whitespace
+        <Stack>             // vertical spacing between blocks (gap)
+          <Grid>            // columns/rows layout
+            <Card />        // boxed content item
+            <Card />
+          </Grid>
+        </Stack>
+      </Container>
+    </Section>
+
+    <Section>
+      <Container>
+        <Grid>
+          <Card />
+          <Card />
+          <Card />
+        </Grid>
+      </Container>
+    </Section>
+
+  </Main>
+
+  <Footer />
+</Page>

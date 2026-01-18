@@ -1,0 +1,4 @@
+// Layout wrapper: groups content into vertical bands with consistent spacing.
+export default function Section({ children, className = "" }) {
+  return <section className={`section ${className}`}>{children}</section>;
+}
