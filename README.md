@@ -13,15 +13,15 @@ A job board web app that helps users browse and explore entry-level opportunitie
 - GitHub
 
 ## MVP 1
-✅ Job board layout
-⬜ Filters
-⬜ Save jobs
-✅ Resource page layout
-⬜ Qualified resource links
-✅ Account page layout
-⬜ User creation and authentication
-⬜ Web scraper implementation
-⬜ AI for qualifying job listings
+- ✅ Job board layout
+- ⬜ Filters
+- ⬜ Save jobs
+- ✅ Resource page layout
+- ⬜ Qualified resource links
+- ✅ Account page layout
+- ⬜ User creation and authentication
+- ⬜ Web scraper implementation
+- ⬜ AI for qualifying job listings
 
 Work-in-progress; more to come!
 
