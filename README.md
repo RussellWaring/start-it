@@ -26,4 +26,4 @@ A job board web app that helps users browse and explore entry-level opportunitie
 Work-in-progress; more to come!
 
 ## Screenshots
-![Homepage](./docs/screenshots/screenshot1.PNG)
+![Homepage](./docs/screenshots/start-it.PNG)
