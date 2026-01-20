@@ -1,5 +1,6 @@
 // App shell: composes global layout (Navbar + routed pages + Footer).
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+// TODO: Change HashRouter back to BrowserRouter
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -37,8 +38,8 @@ function AppShell() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AppShell />
-    </BrowserRouter>
+    </HashRouter>
   );
 }

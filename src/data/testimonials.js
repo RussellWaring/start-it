@@ -18,7 +18,7 @@ export const testimonials = [
   {
     id: "t3",
     quote:
-      "start-it.ca is the simplest platform I’ve used for finding truly entry-level roles.",
+      "start-it.ca is the perfect platform for connecting the right people with the right jobs.",
     author: "Electric City Supply",
     meta: "Hiring partner",
   },
